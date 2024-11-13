@@ -19,14 +19,14 @@ body:
         3.
     validations:
       required: true
-  - type: input
+  - type: textarea
     id: expected-behavior
     attributes:
       label: Comportamento Esperado
       description: O que você esperava que acontecesse?
     validations:
       required: false
-  - type: input
+  - type: textarea
     id: actual-behavior
     attributes:
       label: Comportamento Real
