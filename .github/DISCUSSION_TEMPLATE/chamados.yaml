@@ -53,6 +53,7 @@ body:
     id: bug-area
     attributes:
       label: Onde no projeto você encontrou o bug?
+      multiple: true
       options:
         - Painel
         - Loja
