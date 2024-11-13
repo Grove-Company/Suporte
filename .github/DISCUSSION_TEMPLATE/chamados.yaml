@@ -34,3 +34,41 @@ body:
       render: markdown
     validations:
       required: true
+  - type: input
+    id: expected-behavior
+    attributes:
+      label: Comportamento Esperado
+      description: O que você esperava que acontecesse?
+    validations:
+      required: false
+  - type: input
+    id: actual-behavior
+    attributes:
+      label: Comportamento Real
+      description: O que realmente aconteceu?
+    validations:
+      required: false
+  - type: file
+    id: attachments
+    attributes:
+      label: Anexos
+      description: Faça o upload de capturas de tela, logs ou arquivos relevantes.
+    validations:
+      required: false
+  - type: dropdown
+    id: bug-area
+    attributes:
+      label: Onde no projeto você encontrou o bug?
+      options:
+        - Frontend
+        - Backend
+        - Banco de Dados
+        - UI
+        - Outro
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ### Obrigado por relatar o bug!
+        Nós investigaremos e trabalharemos para corrigir o problema o mais rápido possível.
