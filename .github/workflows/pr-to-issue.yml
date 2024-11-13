@@ -1,0 +1,37 @@
+name: Monitor Issue for PR Linking
+
+on:
+  issues:
+    types: [edited]  # Disparar quando a issue for editada
+
+jobs:
+  handle_issue_update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Handle issue edit
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Verificar se a issue contém links para PRs
+          ISSUE_BODY="${{ github.event.issue.body }}"
+          
+          # Procurar por PRs adicionados à issue (ex: PRs com links na descrição)
+          if [[ "$ISSUE_BODY" =~ "https://github.com/your-org/Grove-Company/whatsmenu/" ]]; then
+            PR_URL=$(echo "$ISSUE_BODY" | grep -o 'https://github.com/your-org/your-repo/pull/[0-9]\+')
+            PR_TITLE=$(curl -s "https://api.github.com/repos/Grove-Company/whatsmenu/pulls/$(basename $PR_URL)" | jq -r '.title')
+            
+            # Adicionar um comentário na issue com informações sobre o PR
+            COMMENT="A new pull request has been linked to this issue:
+            
+            - **PR Title**: $PR_TITLE
+            - **PR URL**: $PR_URL"
+            
+            curl -X POST \
+              -H "Authorization: token $GITHUB_TOKEN" \
+              -d "{\"body\": \"$COMMENT\"}" \
+              "https://api.github.com/repos/Grove-Company/Suporte/issues/${{ github.event.issue.number }}/comments"
+          fi
