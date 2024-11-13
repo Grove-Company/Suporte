@@ -55,20 +55,4 @@ body:
       description: Faça o upload de capturas de tela, logs ou arquivos relevantes.
     validations:
       required: false
-  - type: dropdown
-    id: bug-area
-    attributes:
-      label: Onde no projeto você encontrou o bug?
-      options:
-        - Frontend
-        - Backend
-        - Banco de Dados
-        - UI
-        - Outro
-    validations:
-      required: true
-  - type: markdown
-    attributes:
-      value: |
-        ### Obrigado por relatar o bug!
-        Nós investigaremos e trabalharemos para corrigir o problema o mais rápido possível.
+  
