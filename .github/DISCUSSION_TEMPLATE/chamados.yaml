@@ -48,13 +48,7 @@ body:
       description: O que realmente aconteceu?
     validations:
       required: false
-  - type: file
-    id: attachments
-    attributes:
-      label: Anexos
-      description: Faça o upload de capturas de tela, logs ou arquivos relevantes.
-    validations:
-      required: false
+ 
   - type: dropdown
     id: bug-area
     attributes:
