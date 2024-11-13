@@ -1,5 +1,5 @@
 title: "[Relatório de Bug] "
-labels: ["BUG"]
+labels: ["Bug", "Relatório"]
 body:
   - type: markdown
     attributes:
@@ -22,44 +22,3 @@ body:
       render: markdown
     validations:
       required: true
-  - type: textarea
-    id: steps-to-reproduce
-    attributes:
-      label: Passos para Reproduzir
-      description: Forneça os passos para reproduzir o bug.
-      value: |
-        1.
-        2.
-        3.
-      render: bash
-    validations:
-      required: true
-  - type: input
-    id: expected-behavior
-    attributes:
-      label: Comportamento Esperado
-      description: O que você esperava que acontecesse?
-    validations:
-      required: true
-  - type: input
-    id: actual-behavior
-    attributes:
-      label: Comportamento Real
-      description: O que realmente aconteceu?
-    validations:
-      required: true
-  - type: file
-    id: attachments
-    attributes:
-      label: Anexos
-      description: Faça o upload de capturas de tela, logs ou arquivos relevantes.
-    validations:
-      required: false
-  - type: dropdown
-    id: bug-area
-    attributes:
-      label: Onde no projeto você encontrou o bug?
-      options:
-        - Frontend
-        - Backend
-        - Banc
