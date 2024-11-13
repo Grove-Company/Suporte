@@ -54,10 +54,11 @@ body:
     attributes:
       label: Onde no projeto você encontrou o bug?
       options:
-        - Frontend
-        - Backend
-        - Banco de Dados
-        - UI
+        - Painel
+        - Loja
+        - PDV
+        - Desktop
+        - App de Impressão
         - Outro
     validations:
       required: true
