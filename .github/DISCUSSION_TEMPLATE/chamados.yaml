@@ -1,5 +1,5 @@
 title: "[Relatório de Bug] "
-labels: ["Bug", "Relatório"]
+labels: ["BUG"]
 body:
   - type: markdown
     attributes:
@@ -19,6 +19,18 @@ body:
       description: Por favor, forneça uma descrição detalhada do bug.
       value: |
         Descreva o problema em detalhes, incluindo mensagens de erro, comportamento inesperado, etc.
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Passos para Reproduzir
+      description: Forneça os passos para reproduzir o bug.
+      value: |
+        1.
+        2.
+        3.
       render: markdown
     validations:
       required: true
